@@ -146,7 +146,7 @@ class RetinaRegistration:
                                              RetinaRegistration.calc_dist, REGISTRATION_MUM_OF_POINTS,
                                              iterations_number, inlier_distatncce_th, inlier_th_ratio)
         if not np.any(reg):
-            raise RegistrationException("returned rgistration from RANSAC is the zero transformation")
+            raise RegistrationException("returned registration from RANSAC is the null transformation")
         transformed = tf.AffineTransform(reg)
         warpped_image = tf.warp(self.fu_image, transformed.params)
         self.show_registration(warpped_image)
